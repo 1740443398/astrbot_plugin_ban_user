@@ -82,13 +82,12 @@ class BanUserPlugin(Star):
 
     @staticmethod
     def _is_admin(event: AstrMessageEvent) -> bool:
-        """判断发送者是否为管理员/群主。"""
+        """判断发送者是否为 BOT 管理员。
+
+        仅 AstrBot 配置中的管理员（admins_id）可使用本插件，群主/群管不具权限。
+        """
         try:
-            sender = event.message_obj.sender
-            if sender is None:
-                return False
-            role = getattr(sender, "role", "")
-            return role in ("admin", "owner")
+            return event.is_admin()
         except Exception:
             return False
 
