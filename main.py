@@ -162,7 +162,7 @@ class BanUserPlugin(Star):
     @filter.command("unban", priority=PLUGIN_PRIORITY)
     async def unban(self, event: AstrMessageEvent):
         """解封指定用户。\n
-        用法: /unban QQ号
+        用法: /unban QQ号 或 /unban @用户
         """
         try:
             if not self._is_admin(event):
@@ -171,7 +171,7 @@ class BanUserPlugin(Star):
 
             target = self._extract_target(event)
             if not target:
-                yield event.plain_result("❌ 请指定要解封的用户，用法: /unban QQ号")
+                yield event.plain_result("❌ 请指定要解封的用户，用法: /unban QQ号 或 /unban @用户")
                 return
 
             await self._load_banned()
