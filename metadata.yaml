@@ -1,0 +1,12 @@
+name: astrbot_plugin_ban_user
+display_name: 用户拉黑
+desc: 拉黑指定用户，使 Bot 不再处理其消息。管理员可用 /ban 封禁（@用户或QQ号），/unban 解封，/banlist 查看封禁列表。封禁用户在任何情况下都无法使用 Bot。
+short_desc: 拉黑指定用户，使 Bot 不再处理其消息
+version: v1.0.0
+author: 蕭遞和TRAE WORK(ds v4 pro)
+repo: https://github.com/1740443398/astrbot_plugin_ban_user
+requirements:
+  - astrbot>=v4.9.2
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.16,<5"
